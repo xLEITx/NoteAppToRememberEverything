@@ -6,6 +6,7 @@ import com.leit.noteapptoremembereverything.feature_note.data.data_source.NoteDa
 import com.leit.noteapptoremembereverything.feature_note.data.repository.NoteRepositoryImp
 import com.leit.noteapptoremembereverything.feature_note.domain.repository.NoteRepository
 import com.leit.noteapptoremembereverything.feature_note.domain.use_case.DeleteNote
+import com.leit.noteapptoremembereverything.feature_note.domain.use_case.GetNoteById
 import com.leit.noteapptoremembereverything.feature_note.domain.use_case.GetNotes
 import com.leit.noteapptoremembereverything.feature_note.domain.use_case.InsertNote
 import com.leit.noteapptoremembereverything.feature_note.domain.use_case.NoteUseCases
@@ -40,7 +41,8 @@ object AppModule {
         return NoteUseCases(
             getNotes = GetNotes(repository),
             deleteNote = DeleteNote(repository),
-            insertNote = InsertNote(repository)
+            insertNote = InsertNote(repository),
+            getNoteById = GetNoteById(repository)
         )
     }
 }
